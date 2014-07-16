@@ -1,0 +1,30 @@
+Title:
+<p>{{ Pricelist.the_title }}</p>
+Content: 
+<p>{{ Pricelist.content }}</p>
+Image: 
+<p>{{ Pricelist.imgsrc }}</p>
+
+
+{% for img in images %}
+	{% spaceless %}
+	<img id="smallgallery_{{img.pk}}-image" src="{{ img.image.url }}" alt="{{img.name|default:''}}" />
+    {% endspaceless %}
+{% endfor %}
+
+
+{% for pricelist in pricelists %}
+	{% for pitem in pricelist.choices.all %}
+		{{ pitem.pi_title }}
+	
+	{% for usdd in pitem.cars.all %}
+		{{ usdd.ps_title }}
+		{{ usdd.ps_imgsrc }}
+		{{ usdd.ps_content }}
+	{% endfor %}
+	<hr>
+	{% endfor %}
+{% endfor %}
+
+<br/>
+<br/>

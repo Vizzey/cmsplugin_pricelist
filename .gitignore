@@ -1,0 +1,11 @@
+*~
+*.orig
+*.pyc
+*.pyo
+*.rej
+*.log
+*.swp
+.DS_Store
+local_settings.py
+*.db
+*.sql
