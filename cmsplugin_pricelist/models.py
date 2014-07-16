@@ -38,3 +38,4 @@ class Pricelist(CMSPlugin):
 			files = self.the_gallery.files
 			self.__images = [f for f in files if f.file_type == 'Image']
 			self.__images.sort()
+		return self.__images
